@@ -1,0 +1,1 @@
+= Declarative Authorization wrapper for Padrino
