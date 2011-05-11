@@ -1,1 +1,23 @@
 = Declarative Authorization wrapper for Padrino
+
+Read https://github.com/stffn/declarative_authorization for everything else but how to secure your controllers.
+
+== Securing your controllers
+
+Although it's not the best approach, it'll do the job for now.
+
+# Register the module in your app/app.rb
+
+  register Authorization::Padrino
+
+# For each action on your controller you'd like to protect add something like this:
+
+  :protect => [{:action => :read, :resource => :users, :forbidden => "Custom 403 forbidden message"}]
+  
+Note that :forbidden is optional.
+
+  get '/', :provides => :json, :protect => [{:action => :read, :resource => :users}] do
+    User.with_permissions_to.all.to_json(:include => :roles)
+  end
+
+And that's pretty much it :)
