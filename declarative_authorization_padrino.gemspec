@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "declarative_authorization_padrino"
-  s.version = "0.1"
+  s.version = "0.1.1"
   s.required_ruby_version = ">= 1.8.6"
   s.authors = ["Dario Javier Cravero"]
   s.summary = "declarative_authorization_padrino is a Padrino's wrapper around declarative_authorization's Rails plugin for maintainable authorization based on readable authorization rules."
