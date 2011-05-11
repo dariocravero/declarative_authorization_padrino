@@ -2,9 +2,12 @@ require "active_support/core_ext/module/delegation" # for some funny reason I ne
 
 require File.join("declarative_authorization_padrino", "authorization")
 
-module Rails
-  def self.version 
-    "3"
+# Stub Rails so we don't have to change almost everything in obligation_scope
+module Authorization
+  module Rails
+    def self.version 
+      "3"
+    end
   end
 end
 
