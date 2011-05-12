@@ -2,6 +2,7 @@ module Authorization
   module Padrino
     def self.registered(app)
       app.extend(Protect)
+      def app.hide_action(*args); end; #stub this method since it belongs to rails' controllers
       app.helpers Authorization::AuthorizationInController
     end
 
