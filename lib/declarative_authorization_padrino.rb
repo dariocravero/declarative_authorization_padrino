@@ -6,7 +6,12 @@ require File.join("declarative_authorization_padrino", "authorization")
 module Authorization
   module Rails
     def self.version 
-      "3"
+      require 'padrino' unless ::Padrino.respond_to? :version
+      if ::Padrino.version >= "0.10.3"
+        "3.1"
+      else
+        "3"
+      end
     end
   end
 end
